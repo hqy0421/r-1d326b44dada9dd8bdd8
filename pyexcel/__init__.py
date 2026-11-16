@@ -27,6 +27,7 @@ from .core import (
     isave_book_as,
 )
 from .sheet import Sheet
+from .questionnaire import questionnaire_statistics
 
 # flake8: noqa
 from .cookbook import (

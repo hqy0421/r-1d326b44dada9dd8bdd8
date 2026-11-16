@@ -2,6 +2,9 @@ name: pyexcel
 organisation: pyexcel
 releases:
 - changes:
+  - action: Added
+    details:
+    - "`questionnaire_statistics`: weighted questionnaire statistics that honour skip (routing) conditions. It builds the analysis population from the questions, options, respondents and long format answers and returns a native `Book` with the applicable answers, the option and missing-answer distribution per group and the excluded residual records. Weights are positive integers and the denominator includes missing answers; duplicate identifiers, invalid options and cyclic rules raise `QuestionnaireError` for the whole batch."
   - action: Fixed
     details:
     - "`#310`: fix broken indentation in iget_records memory-reduction patch"

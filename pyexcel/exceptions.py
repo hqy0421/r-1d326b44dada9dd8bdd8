@@ -25,3 +25,9 @@ class UpgradePlugin(Exception):
     """Please upgrade your plugin"""
 
     pass
+
+
+class QuestionnaireError(Exception):
+    """The questionnaire description or its data is not valid"""
+
+    pass

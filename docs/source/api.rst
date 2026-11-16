@@ -100,8 +100,32 @@ Cookbook
    split_a_book
    extract_a_sheet_from_a_book
 
-   
-Book 
+Questionnaire statistics
+=========================
+
+.. autosummary::
+   :toctree: generated/
+
+   questionnaire_statistics
+
+``questionnaire_statistics`` builds the analysis population of a
+questionnaire with skip (routing) conditions and returns a native
+:class:`pyexcel.Book`. A root question is applicable to everybody, a child
+question is applicable only when its parent is applicable and the answer to
+the parent is one of the trigger options. Residual answers stored in the
+source table for an inactive branch are excluded. Weights are positive
+integers: the denominator of a proportion is the weight of every applicable
+respondent of the group for that question, missing answers included. When
+nobody is applicable the proportion is left blank.
+
+The resulting book has three sheets: ``applicable_answers`` with one row per
+applicable respondent and question, ``option_distribution`` with the weight
+and proportion of every option plus the missing answers, and
+``excluded_answers`` with the residual records that were not counted.
+Duplicate identifiers, invalid options and cyclic rules raise
+:class:`pyexcel.exceptions.QuestionnaireError` for the whole batch.
+
+Book
 =====
 
 Here's the entity relationship between Book, Sheet, Row and Column
